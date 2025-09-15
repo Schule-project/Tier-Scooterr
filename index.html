@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tier - Elektrische Scooter mieten</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🛴</span>
+                    <span class="logo-text">tier</span>
+                </div>
+                <nav class="header-nav">
+                    <a href="#">Angebote</a>
+                    <a href="#">Städte</a>
+                    <a href="#">Unternehmen</a>
+                    <a href="#">Hilfe</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="payment-card">
+                <div class="payment-header">
+                    <h1>Zahlung abschließen</h1>
+                    <p>Bezahlen Sie 3,19€ für Ihre Scooter-Miete</p>
+                </div>
+
+                <div class="payment-form">
+                    <div class="form-section">
+                        <h3>Kartendetails</h3>
+                        <div class="form-group">
+                            <label for="cardNumber">Kartennummer</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Gültig bis</label>
+                                <input type="text" id="expiryDate" placeholder="MM/JJ" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">Sicherheitscode</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardName">Name auf der Karte</label>
+                            <input type="text" id="cardName" placeholder="Max Mustermann">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Kontaktdetails</h3>
+                        <div class="form-group">
+                            <label for="email">E-Mail-Adresse</label>
+                            <input type="email" id="email" placeholder="ihre@email.de">
+                        </div>
+                    </div>
+
+                    <div class="payment-buttons">
+                        <div class="payment-method">
+                            <div class="payment-option" onclick="showUnavailable()">
+                                <span class="payment-icon">📱</span>
+                                <span>Google Pay</span>
+                            </div>
+                            <div class="payment-option" onclick="showUnavailable()">
+                                <span class="payment-icon">📧</span>
+                                <span>PayPal</span>
+                            </div>
+                        </div>
+
+                        <button class="pay-button" onclick="processPayment()">
+                            <span class="button-text">3,19€ bezahlen</span>
+                            <span class="button-loader" id="buttonLoader"></span>
+                        </button>
+                    </div>
+
+                    <div class="error-message" id="errorMessage">
+                        ❌ Zahlung fehlgeschlagen. Bitte überprüfen Sie Ihre Daten und Internetverbindung.
+                    </div>
+
+                    <div class="security-notice">
+                        <div class="secure-icon">🔒</div>
+                        <span>Ihre Zahlung wird sicher verarbeitet. Alle Daten werden verschlüsselt übertragen.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-sidebar">
+                <div class="order-summary">
+                    <h3>Zusammenfassung</h3>
+                    <div class="summary-item">
+                        <span>Scooter-Miete</span>
+                        <span>3,19€</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Gesamt</span>
+                        <span>3,19€</span>
+                    </div>
+                </div>
+
+                <div class="benefits">
+                    <h3>Ihre Vorteile</h3>
+                    <div class="benefit-item">
+                        <span>⚡</span>
+                        <span>24/7 Verfügbarkeit</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span>🌍</span>
+                        <span>Umweltfreundlich</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span>🛡️</span>
+                        <span>Versichert</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2024 Tier Mobility GmbH. Alle Rechte vorbehalten.</p>
+            <div class="footer-links">
+                <a href="#">AGB</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">Impressum</a>
+            </div>
+        </footer>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Zahlung wird verarbeitet...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
